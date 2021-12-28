@@ -1,47 +1,40 @@
-import React, {Component} from 'react';
+import React, {useEffect, useState} from 'react';
 import ReactMarkdown from 'react-markdown'
 import { Button} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
-class Ideas extends Component {
+function Ideas() {
 
-	constructor(props) {
-		super(props);
-		this.state = { apiResponse: "" };
-	};
+	const [apiResponse, setapiResponse] = useState();
 
-	callAPI() {
-		//const hostname = window.location.hostname
+	const {id} = useParams();
+
+	useEffect(() => {
+
 		const api_server =
 			process.env.NODE_ENV === "development"
 				? "" //express server in development, localhost
 				: "http://juanchi.pro:9000"; //express server in production
-		let id = this.props.match.params.id
-		if (id === "undefined") {
-			id = "main";
-		}
+
 		fetch(api_server + "/api/" + id)
 			.then(res => res.text())
-			.then(res => this.setState({ apiResponse: res }));
+			.then(res => setapiResponse(res));
+
+	}, [id])
+
+	const pathname = window.location.pathname;
+	let main;
+	if (pathname === "/ideas") {
+		main = true;
+	} else {
+		main = false;
 	};
 
-	componentDidMount() {
-		this.callAPI();
-	};
-
-	render() {
-		const pathname = window.location.pathname;
-		let main;
-		if (pathname === "/ideas") {
-			main = true;
-		} else {
-			main = false;
-		};
-		return (
+	return (
 		<React.Fragment>
 			<div className="App-centered">
 				<div className="App-text">
-					<ReactMarkdown children={this.state.apiResponse} />
+					<ReactMarkdown children={apiResponse} />
 				</div>
 			</div>
 			<div className="back-button">
@@ -60,7 +53,7 @@ class Ideas extends Component {
 				</Link>
 			</div>
 		</React.Fragment>
-	)};
+	);
 }
 
 export default Ideas;

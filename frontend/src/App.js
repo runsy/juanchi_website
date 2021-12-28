@@ -1,4 +1,4 @@
-import React, { Component, lazy, Suspense } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { isBrowser } from "react-device-detect";
 import { Tooltip, OverlayTrigger } from 'react-bootstrap';
 import './App.css';
@@ -93,38 +93,36 @@ var Main = () => {
 
 //App class
 
-class App extends Component {
-	render(){
-		return(
-			<div className="App">
-				<header className="App-header">
-					<img src={logo} className="App-logo" alt="Juanchi" />
-				</header>
-				<ErrorBoundary>
-					<Suspense fallback={<p>Cargando...</p>}>
-						<Main />
-					</Suspense>
-				</ErrorBoundary>
-				<Route exact path='/'>
-					<footer class="text-center">
-						<p>
-						<OverlayTrigger placement="left" overlay={renderEmailTooltip}>
-							<a href="mailto:juancho.proaso@gmail.com">
-								<img src={email} className="email" alt="E-mail" />
-							</a>
-						</OverlayTrigger>
-						<OverlayTrigger placement="right" overlay={renderInstagramTooltip}>
-							<a href="http://instagram.com/juan.diaz.diaz.ferrol">
-								<img src={instagram} className="instagram" alt="instagram" />
-							</a>
-						</OverlayTrigger>
-						</p>
-						<p>Alojado en una Raspberry | Desarrollado con React</p>
-					</footer>
-				</Route>
-			</div>
-		)
-	}
+function App() {
+	return(
+		<div className="App">
+			<header className="App-header">
+				<img src={logo} className="App-logo" alt="Juanchi" />
+			</header>
+			<ErrorBoundary>
+				<Suspense fallback={<p>Cargando...</p>}>
+					<Main />
+				</Suspense>
+			</ErrorBoundary>
+			<Route exact path='/'>
+				<footer class="text-center">
+					<p>
+					<OverlayTrigger placement="left" overlay={renderEmailTooltip}>
+						<a href="mailto:juancho.proaso@gmail.com">
+							<img src={email} className="email" alt="E-mail" />
+						</a>
+					</OverlayTrigger>
+					<OverlayTrigger placement="right" overlay={renderInstagramTooltip}>
+						<a href="http://instagram.com/juan.diaz.diaz.ferrol">
+							<img src={instagram} className="instagram" alt="instagram" />
+						</a>
+					</OverlayTrigger>
+					</p>
+					<p>Alojado en una Raspberry | Desarrollado con React</p>
+				</footer>
+			</Route>
+		</div>
+	)
 }
 
 export default App;
