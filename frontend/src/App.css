@@ -1,0 +1,163 @@
+@media (min-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ }
+@media (min-width:480px)  { /* smartphones, Android phones, landscape iPhone */ }
+@media (min-width:600px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle),
+	landscape 800x480 phones (Android) */ }
+@media (min-width:801px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+@media (min-width:1281px) { /* hi-res laptops and desktops */ }
+
+/* fonts */
+@font-face {
+  font-family: 'SageSans';
+  src: local('SageSans'), url(./fonts/sagesans-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'BadComic';
+  src: local('BadComic'), url(./fonts/BadComic-Regular.ttf) format('truetype');
+}
+
+h1 {
+	font-family: BadComic, sans;
+	font-size: calc(10px + 4vmin);
+	margin-bottom: 0.5em;
+}
+
+h3 {
+	font-family: SageSans, serif;
+	font-size: calc(15px + 3vmin);
+	margin-bottom: 0.5em;
+}
+
+p {
+	font-family: SageSans, serif;
+	font-size: calc(15px + 2vmin);
+	margin-bottom: 0.5em;
+}
+
+a {
+	font-family: BadComic, sans;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+	text-align: center;
+	height: 40vh;
+	pointer-events: none;
+}
+
+.App-header {
+	font-family: BadComic, sans;
+	font-size: calc(10px + 2vmin);
+	background-color: #f8e4fffe;
+	width:auto;
+	min-height: 40vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: white;
+}
+
+@media only screen and (hover: none) and (pointer: coarse){
+	.App-centered {
+		background-color: #ffffff;
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		align-items: center;
+		font-size: calc(10px + 2vmin);
+		color: black;
+		margin: 0 clamp(5vw, 10vw, 10vw) 1vw;
+	}
+}
+
+@media only screen and (min-width: 1025px) {
+	.App-centered {
+		background-color: #ffffff;
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		align-items: center;
+		font-size: calc(10px + 2vmin);
+		color: black;
+		margin: 0 clamp(5vw, 25vw, 25vw) 1vw;
+	}
+}
+
+.App-text {
+	font-family: SageSans, sans;
+	font-size: calc(10px + 2vmin);
+	background-color: #ffffff;
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	align-items: left;
+	color: black;
+	padding: 1em;
+}
+
+.App-link {
+	color: #61dafb;
+}
+
+.App-timeline {
+	min-width: 50vw;
+	background-color: #ffffff;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+	font-family: BadComic, sans;
+	font-size: calc(10px + 1vmin);
+	color: black;
+}
+
+/* HOME IMAGES */
+
+.email,.instagram {
+	display: inline-block;
+	text-align: center;
+	height: 3em;
+	margin: 1em;
+}
+
+.email:hover,.instagram:hover {
+	background-color: #e6fefe;
+}
+
+._404 {
+	display: inline-block;
+	text-align: center;
+	width: 10em;
+	margin-top: 0.1em;
+}
+
+/* BUTTONS */
+
+.btn-flat {
+	font-family: BadComic, sans;
+	background-color: #fed136;
+    color: white;
+	margin-bottom: 1em;
+}
+
+.btn-flat:hover {
+	color: white;
+}
+
+/* TOOLTIPS */
+
+.tooltip-inner {
+	font-family: SageSans, sans;
+	font-size: calc(10px + 1.5vmin);
+	background-color: #f7ffd8;
+	color: #000000;
+}
+
+/* markdown */
+.markdown {
+	text-align: left;
+}
