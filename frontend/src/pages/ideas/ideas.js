@@ -5,7 +5,7 @@ import { Link, useParams } from 'react-router-dom';
 
 function Ideas() {
 
-	const [apiResponse, setapiResponse] = useState();
+	const [apiResponse, setapiResponse] = useState(''); //initialize useState to ""
 
 	const {id} = useParams();
 
