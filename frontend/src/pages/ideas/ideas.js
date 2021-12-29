@@ -35,7 +35,7 @@ function Ideas() {
 			<div className="App-centered">
 				<div className="h-entry App-text">
 					{/* linkTarget sets the target for links */}
-					<ReactMarkdown linkTarget="_blank" children={apiResponse} />
+					<ReactMarkdown children={apiResponse} />
 				</div>
 			</div>
 			<div className="back-button">
