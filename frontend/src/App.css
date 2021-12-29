@@ -27,9 +27,16 @@ p {
 	margin-bottom: 0.5em;
 }
 
-a {
-	font-family: BadComic, sans;
+blockquote {
+  font-family: BadComic, sans;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+  padding-left: 15px;
+  border-left: 3px solid #ccc;
 }
+
+/* App */
 
 .App {
   text-align: center;
@@ -125,6 +132,11 @@ a {
 	text-align: center;
 	width: 10em;
 	margin-top: 0.1em;
+}
+
+#my-line {
+	font-family: SageSans, serif;
+	font-size: calc(15px + 1.75vmin);
 }
 
 /* BUTTONS */

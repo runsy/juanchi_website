@@ -118,7 +118,9 @@ function App() {
 						</a>
 					</OverlayTrigger>
 					</p>
-					<p>Alojado en una Raspberry | Desarrollado con React</p>
+					<div id="my-line">
+						Alojado en una Raspberry | Desarrollado con React
+					</div>
 				</footer>
 			</Route>
 		</div>

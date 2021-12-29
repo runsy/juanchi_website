@@ -20,7 +20,7 @@ function Ideas() {
 			.then(res => res.text())
 			.then(res => setapiResponse(res));
 
-	}, [id])
+	}, [])
 
 	const pathname = window.location.pathname;
 	let main;
@@ -34,7 +34,8 @@ function Ideas() {
 		<React.Fragment>
 			<div className="App-centered">
 				<div className="App-text">
-					<ReactMarkdown children={apiResponse} />
+					{/* linkTarget sets the target for links */}
+					<ReactMarkdown linkTarget="_blank" children={apiResponse} />
 				</div>
 			</div>
 			<div className="back-button">

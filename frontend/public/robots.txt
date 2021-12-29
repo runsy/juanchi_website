@@ -1,3 +1,4 @@
 # https://www.robotstxt.org/robotstxt.html
+Sitemap: http://juanchi.pro/sitemap.txt
 User-agent: *
 Disallow:
