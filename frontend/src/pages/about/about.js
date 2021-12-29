@@ -11,7 +11,7 @@ var About = () => {
 			<div className="App-text">
 				<p>Soy profe de instituto.</p>
 				<p>Me gusta la tecnología, los juegos y la buena música.</p>
-				<a rel= "me" href="https://github.com/runsy" target="_blank">My Github</a>
+				<a href="https://github.com/runsy" target="_blank" rel="noreferrer">My Github</a>
 			</div>
 			<div className="App-centered">
 				<img src={timeline} className="App-timeline" alt="Línea de tiempo" />

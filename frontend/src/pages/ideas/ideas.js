@@ -19,7 +19,7 @@ function Ideas() {
 		fetch(api_server + "/api/" + id)
 			.then(res => res.text())
 			.then(res => setapiResponse(res));
-
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 
 	const pathname = window.location.pathname;
@@ -33,7 +33,7 @@ function Ideas() {
 	return (
 		<React.Fragment>
 			<div className="App-centered">
-				<div className="App-text">
+				<div className="h-entry App-text">
 					{/* linkTarget sets the target for links */}
 					<ReactMarkdown linkTarget="_blank" children={apiResponse} />
 				</div>

@@ -5,6 +5,7 @@ import Figure from 'react-bootstrap/Figure';
 /*import logo_ciber from './images/logo_ciber.svg';*/
 import juanchi from './images/juanchi.svg';
 import ideas from './images/ideas.svg';
+import click from './images/click_anywhere.svg';
 
 import { welcome } from './welcome.json';
 
@@ -23,11 +24,16 @@ var Home = () => {
 						alt= 'Juanchi'
 						style= {{ maxWidth: '12rem' }}
 					/>
-					<Figure.Caption>
-						⇧ Haz clic donde quieras ⇩
-					</Figure.Caption>
 				</Figure>
 			</Link>
+			<Figure>
+				<Figure.Image
+					src={click}
+					fluid
+					alt= 'click anywhere'
+					style= {{ maxWidth: '10rem' }}
+				/>
+			</Figure>
 			<Link to="/ideas">
 				<Figure>
 					<Figure.Image
