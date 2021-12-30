@@ -11,20 +11,37 @@
 
 h1 {
 	font-family: BadComic, sans;
-	font-size: calc(10px + 4vmin);
+	font-size: calc(15px + 4vmin);
 	margin-bottom: 0.5em;
+	border-bottom: 1px dashed #999;
+	display: inline;
+}
+
+h2 {
+	font-family: BadComic, sans;
+	font-size: calc(14px + 3vmin);
+	margin-bottom: 0.5em;
+	border-bottom: 1px dashed #999;
+	display: inline;
 }
 
 h3 {
-	font-family: SageSans, serif;
-	font-size: calc(15px + 3vmin);
+	font-family: BadComic, sans;
+	font-size: calc(13px + 3vmin);
 	margin-bottom: 0.5em;
+	border-bottom: 1px dashed #999;
+	display: inline;
 }
 
 p {
 	font-family: SageSans, serif;
 	font-size: calc(15px + 2vmin);
 	margin-bottom: 0.5em;
+}
+
+a {
+	font-family: SageSans, serif;
+	font-size: calc(15px + 2vmin);
 }
 
 blockquote {
@@ -34,6 +51,22 @@ blockquote {
   margin-left: 50px;
   padding-left: 15px;
   border-left: 3px solid #ccc;
+}
+
+pre, code {
+  font-family: monospace, monospace;
+}
+
+pre {
+  overflow: auto;
+  white-space: pre;
+  border: 1px solid #999;
+}
+
+pre > code {
+  display: block;
+  padding: 1rem;
+  word-wrap: normal;
 }
 
 /* App */

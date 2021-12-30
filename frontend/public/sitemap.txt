@@ -1,6 +1,7 @@
 http://www.juanchi.pro/index.html
 http://www.juanchi.pro/about
 http://www.juanchi.pro/ideas
+http://www.juanchi.pro/ideas/home_server
 http://www.juanchi.pro/ideas/jardin_digital
 http://www.juanchi.pro/ideas/libros
 

@@ -1,7 +1,5 @@
 # Jardín digital
 
----
-
 > Un jardín digital es una colección de notas imperfectas, ensayos, e ideas que crecen lentamente con el tiempo.
 
 Mi blog pretendo que sea ese nuevo concepto de publicación personal que se ha puesto en tendencia a partir del 2018, y que explosionó en 2020.
@@ -55,8 +53,3 @@ Llegados a un jardín digital son necesarias dotes de **exploración** por la in
 ---
 
 [Garden History by Maggie Appleton](https://maggieappleton.com/garden-history)
-
-
-
-
-

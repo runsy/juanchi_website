@@ -1,5 +1,4 @@
 # Mis libros favoritos
----
 Me encanta leer, aunque no tengo mucho tiempo. La temporada en que más leo es el verano. El género que más leo es la novela negra, y dentro de ella el subgénero misterio *"cozy"*, esto es, un crimen que se ocasiona en un entorno cerrado, con pocos personajes y todos con secretos inconfesables.
 
 Aquí van tres de mis recomendaciones no tan obvias.
