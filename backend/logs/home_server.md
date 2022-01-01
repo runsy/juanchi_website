@@ -4,7 +4,7 @@ I decided a month and a half ago to restart my personal page and make it more in
 
 I knew I didn't want a proprietary server or to depend on anyone, so I decided to use a Raspberry to do my setup, it's cheap and consumes little power and space! The only problem I see is that it gets too hot...
 
-And why React? Because I saw that React is mainly for SPA, that is, Single Page Applications. Besides Javascript is in fashion and React is too.
+And why React? Because I saw that React is mainly for SPA, that is, Single Page Applications. Besides Javascript is 'in' and React is too.
 
 ## React is difficult
 
@@ -18,9 +18,29 @@ I wanted the garden entries to be simple and in a universal format. I opted for 
 
 So I needed not only a nice and pretty frontend, but also a backend that could read .md files.
 
+## Make Raspberry Boot from a USB Stick
+
+SD cards have caused me many problems in the past, because of data loss due to corruption. Also it has to be a fast one, Class 10 at least.
+
+Better to boot the Raspberrian from a pendrive. In the console:
+
+`sudo -E rpi-eeprom-config --edit`
+
+The boot order should be:
+
+`BOOT_ORDER=0xf41`
+
+Then reboot:
+
+`sudo reboot`
+
+This means: firstly try to boot from USB (4) and as second option from SD (1).
+
 ## First Steps
 
 I did it all in two folders: *frontend* and *backend*, inside a *react_app* dir. And I started to install things.
+
+The first thing to do was to install *Node.js* and *npm* packages on Linux.
 
 - In frontend, in the "react-app" dir:
 
@@ -72,7 +92,8 @@ I needed to make an API to communicate the two worlds.
 I edited the *backend/app.js* file to add/modify to it:
 
 ```
-app.use('/', indexRouter);
+var apiRouter = require("./routes/api");
+...
 app.use("/api", apiRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -114,7 +135,7 @@ router.get("/:id", function(req, res) {
 module.exports = router;
 ```
 
-It is the heart of the API that reads the md files and sends them back to the frontend.
+It is the core of the API that reads the md files and sends them back to the frontend.
 How does it read them? Very easy, by reading the path. For example if the path is juanchi.pro/ideas/log, the file that will be read will be 'log.md'. By default, if the path is wrong or does not exist, it will load the main file 'main.md'.
 
 ## Reading from the Frontend
@@ -196,20 +217,24 @@ React can create the static files (it generates them in the */build* folder) to 
 
 `npm run build`
 
-But if you want to use the React server itself, it's easy:
+Optionally, you could use the React server itself, it's easy:
 
 `serve -s build`
+
+If you want to start the Express Server in the background:
+
+`nohup npm start > foo.out 2> foo.err < /dev/null &`
 
 ## Final tweaks for Nginx
 
 ### Configure NGINX server for React with backend
 
-I created the file */etc/nginx/conf.d/react.conf*:
+I created/edited the file */etc/nginx/conf.d/react.conf*:
 
 ```
 server {
 	listen 80;
-	server_name keko.pro;
+	server_name juanchi.pro;
 
 	location / {
 		proxy_set_header   X-Forwarded-For $remote_addr;
@@ -233,7 +258,7 @@ server {
 
 ### Avoid the "Invalid Host Header" error
 
-1.  I edited or created the file */frontend/.env*:
+1.  I created/edited the file */frontend/.env*:
 
   ```
   HOST = juanchi.pro 

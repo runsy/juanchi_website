@@ -6,6 +6,7 @@ import { Link, useParams } from 'react-router-dom';
 function Ideas() {
 
 	const [apiResponse, setapiResponse] = useState(''); //initialize useState to ""
+	const [apiComment, setapiComment] = useState([]);
 
 	const {id} = useParams();
 
@@ -19,6 +20,11 @@ function Ideas() {
 		fetch(api_server + "/api/" + id)
 			.then(res => res.text())
 			.then(res => setapiResponse(res));
+
+		//fetch(api_server + "/comments/" + id)
+			//.then(res => res.json())
+			//.then(data => setapiComment(data));
+
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 
@@ -35,7 +41,10 @@ function Ideas() {
 			<div className="App-centered">
 				<div className="h-entry App-text">
 					{/* linkTarget sets the target for links */}
-					<ReactMarkdown children={apiResponse} />
+					<ReactMarkdown children = {apiResponse} />
+					{/*apiComment.map((user) => (
+						<div className="user">{user.Text}</div>
+					))*/}
 				</div>
 			</div>
 			<div className="back-button">

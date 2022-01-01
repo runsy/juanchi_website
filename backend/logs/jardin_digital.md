@@ -1,6 +1,6 @@
 # Jardín digital
 
-> Un jardín digital es una colección de notas imperfectas, ensayos, e ideas que crecen lentamente con el tiempo.
+> *Un jardín digital es una colección de notas imperfectas, ensayos, e ideas que crecen lentamente con el tiempo.*
 
 Mi blog pretendo que sea ese nuevo concepto de publicación personal que se ha puesto en tendencia a partir del 2018, y que explosionó en 2020.
 
@@ -42,7 +42,7 @@ Los blogs tradicionales sustentados mayormente en Wordpress siguen un orden cron
 
 En el Jardín Digital la estructura de la información es el **Caos Organizado**. Un cierto orden donde no hay una estricta selección basada en fechas, sino que se muestre lo que en un determinado momento el jardinero considere importante. La dimensión del Jardín es neuronal, donde redes de notas se intercomunican entre ellas mediante enlaces (hipervínculos).
 
-> El jardín es topología. Espacio. Es la red integrativa e interactiva, como una disposición y reordenación de las cosas.
+> *El jardín es topología. Espacio. Es la red integrativa e interactiva, como una disposición y reordenación de las cosas.*
 
 ## Exploración
 

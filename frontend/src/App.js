@@ -1,8 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import { isBrowser } from "react-device-detect";
-import { Tooltip, OverlayTrigger } from 'react-bootstrap';
+import { Button, Tooltip, OverlayTrigger } from 'react-bootstrap';
 import './App.css';
-import { Button} from 'react-bootstrap';
 import { Switch, Route, Link, withRouter } from 'react-router-dom';
 
 import Home from './pages/home/home';
