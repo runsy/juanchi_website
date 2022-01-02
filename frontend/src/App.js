@@ -10,7 +10,8 @@ import Home from './pages/home/home';
 import Ideas from './pages/ideas/ideas';
 
 var About = lazy(() => import('./pages/about/about'));
-var Ciberseguridad = lazy(() => import('./pages/ciberseguridad/ciberseguridad'));
+var License = lazy(() => import('./pages/license/license'));
+//var Ciberseguridad = lazy(() => import('./pages/ciberseguridad/ciberseguridad'));
 
 //Select the logo, if desktop browser or mobile.
 var logo = isBrowser ?
@@ -81,8 +82,9 @@ var Main = () => {
 	return (
 		<Switch> {/* The Switch decides which component to show based on the current URL.*/}
 			<Route exact path='/' component={Home}></Route>
-			<Route exact path='/ciberseguridad' component={Ciberseguridad}></Route>
+			{/* <Route exact path='/ciberseguridad' component={Ciberseguridad}></Route> */}
 			<Route exact path='/about' component={About}></Route>
+			<Route exact path='/license' component={License}></Route>
 			<Route exact path='/ideas/:id' component={withRouter(Ideas)}></Route>
 			<Route path='/ideas' component={Ideas}></Route>
 			<Route component={NoMatchPage}/>
@@ -118,7 +120,14 @@ function App() {
 					</OverlayTrigger>
 					</p>
 					<div id="my-line">
-						Alojado en una Raspberry | Desarrollado con React
+						<span>
+							Alojado en una Raspberry | Desarrollado con React | <a href="/license">License</a>
+						</span>
+						<span>
+							<a href="https://xn--sr8hvo.ws/%F0%9F%90%87%F0%9F%91%97%E2%8F%AD/previous">←</a>
+							An IndieWeb Webring 🕸💍
+							<a href="https://xn--sr8hvo.ws/%F0%9F%90%87%F0%9F%91%97%E2%8F%AD/next">→</a>
+						</span>
 					</div>
 				</footer>
 			</Route>
