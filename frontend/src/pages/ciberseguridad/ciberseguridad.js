@@ -15,7 +15,7 @@ var Ciberseguridad = () => {
 			<a href="/simplerisk">Acceder</a>
 			<div><br /></div>
 			<Link to="/">
-				<Button variant="flat" size="lg">
+				<Button>
 					Volver
 				</Button>
 			</Link>

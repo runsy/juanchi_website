@@ -36,7 +36,7 @@ h3 {
 p, li {
 	font-family: SageSans, serif;
 	font-size: calc(15px + 2vmin);
-	margin-bottom: 0.5em;
+	margin: 0.35em;
 }
 
 a {
@@ -58,7 +58,22 @@ blockquote {
 }
 
 pre, code {
-  font-family: monospace, monospace;
+  font-family: monospace;
+}
+
+.button {
+	font-family: BadComic, sans;
+	font-size: calc(14px + 2vmin);
+	text-decoration: none;
+	background: none;
+	background-color: #fed136;
+	color: rgba(255, 255, 255, 0.80);
+    border: none rgba(0, 0, 0, 0);
+	padding: 0.5em 0.75em;
+	border-radius: 6px;
+	box-shadow: none;
+	cursor:pointer;
+	margin-bottom: 1em;
 }
 
 pre {

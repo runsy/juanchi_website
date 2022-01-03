@@ -1,6 +1,5 @@
 import React from 'react';
-import { Button} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import LinkButton from '../../components/LinkButton';
 
 var About = () => {
   var timeline = require("./images/timeline.svg").default
@@ -17,11 +16,7 @@ var About = () => {
 				<img src={timeline} className="App-timeline" alt="Línea de tiempo" />
 			</div>
 			<div className="back-button">
-				<Link to="/">
-					<Button variant="flat" size="lg">
-						Volver
-					</Button>
-				</Link>
+				<LinkButton to='/'>Volver</LinkButton>
 			</div>
 		</div>
 	</React.Fragment>

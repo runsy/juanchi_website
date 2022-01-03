@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import ReactMarkdown from 'react-markdown'
-import { Button} from 'react-bootstrap';
-import { Link, useParams } from 'react-router-dom';
+import LinkButton from '../../components/LinkButton';
+import { useParams } from 'react-router-dom';
 
 function Ideas() {
 
@@ -49,18 +49,10 @@ function Ideas() {
 			</div>
 			<div className="back-button">
 				{!main &&
-					<Link to="/ideas">
-						<Button variant="flat" size="lg">
-							Ideas
-						</Button>
-					</Link>
+					<LinkButton to='/ideas'>Ideas</LinkButton>
 				}
 				&nbsp;
-				<Link to="/">
-					<Button variant="flat" size="lg">
-						🏠 Casa
-					</Button>
-				</Link>
+				<LinkButton to='/'>🏠 Casa</LinkButton>
 			</div>
 		</React.Fragment>
 	);

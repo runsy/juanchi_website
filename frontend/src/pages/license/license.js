@@ -1,6 +1,5 @@
 import React from 'react';
-import { Button} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import LinkButton from '../../components/LinkButton';
 
 var License = () => {
   return (
@@ -19,12 +18,8 @@ var License = () => {
 			</div>
 		</div>
 		<div className="back-button">
-				<Link to="/">
-					<Button variant="flat" size="lg">
-						Volver
-					</Button>
-				</Link>
-			</div>
+			<LinkButton to='/'>Volver</LinkButton>
+		</div>
 	</React.Fragment>
   );
 }

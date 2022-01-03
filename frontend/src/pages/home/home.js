@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Figure from 'react-bootstrap/Figure';
 
 /*import logo_ciber from './images/logo_ciber.svg';*/
 import juanchi from './images/juanchi.svg';
@@ -17,32 +16,11 @@ var Home = () => {
 		</div>
 		<div className="App-centered">
 			<Link to="/about">
-				<Figure>
-					<Figure.Image
-						src={juanchi}
-						fluid
-						alt= 'Juanchi'
-						style= {{ maxWidth: '12rem' }}
-					/>
-				</Figure>
+				<img src={juanchi} alt="Juanchi" style= {{ maxWidth: '12rem' }}/>
 			</Link>
-			<Figure>
-				<Figure.Image
-					src={click}
-					fluid
-					alt= 'click anywhere'
-					style= {{ maxWidth: '10rem' }}
-				/>
-			</Figure>
+				<img src={click} alt="click anywhere" style= {{ maxWidth: '10rem' }}/>
 			<Link to="/ideas">
-				<Figure>
-					<Figure.Image
-						src={ideas}
-						fluid
-						alt= 'Ideas'
-						style= {{ maxWidth: '13rem' }}
-					/>
-				</Figure>
+				<img src={ideas} alt="Ideas" style= {{ maxWidth: '13rem' }}/>
 			</Link>
 			{/*<Link to="/ciberseguridad">
 				<Figure>

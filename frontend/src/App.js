@@ -1,8 +1,8 @@
 import React, { lazy, Suspense } from 'react';
 import { isBrowser } from "react-device-detect";
-import { Button, Tooltip, OverlayTrigger } from 'react-bootstrap';
+import LinkButton from './components/LinkButton';
+import { Switch, Route, withRouter } from 'react-router-dom';
 import './App.css';
-import { Switch, Route, Link, withRouter } from 'react-router-dom';
 
 import Home from './pages/home/home';
 //import Ciberseguridad from './pages/ciberseguridad/ciberseguridad';
@@ -43,20 +43,6 @@ class ErrorBoundary extends React.Component {
 	}
 }
 
-//Tooltips
-
-var renderEmailTooltip = (props) => (
-<Tooltip id="email-tooltip" {...props}>
-	Enviar e-mail
-</Tooltip>
-);
-
-var renderInstagramTooltip = (props) => (
-<Tooltip id="email-tooltip" {...props}>
-	Ver Instagram
-</Tooltip>
-);
-
 //404 Page
 const NoMatchPage = () => {
 	return (
@@ -66,11 +52,7 @@ const NoMatchPage = () => {
 				<h3>404 - Not found</h3>
 			</div>
 			<div className="back-button">
-				<Link to="/">
-					<Button variant="flat" size="lg">
-						Volver
-					</Button>
-				</Link>
+				<LinkButton to='/'>Volver</LinkButton>
 			</div>
 		</React.Fragment>
 	);
@@ -108,16 +90,12 @@ function App() {
 			<Route exact path='/'>
 				<footer class="text-center">
 					<p>
-					<OverlayTrigger placement="left" overlay={renderEmailTooltip}>
 						<a href="mailto:juancho.proaso@gmail.com">
 							<img src={email} className="email" alt="E-mail" />
 						</a>
-					</OverlayTrigger>
-					<OverlayTrigger placement="right" overlay={renderInstagramTooltip}>
 						<a href="http://instagram.com/juan.diaz.diaz.ferrol">
 							<img src={instagram} className="instagram" alt="instagram" />
 						</a>
-					</OverlayTrigger>
 					</p>
 					<div id="my-line">
 						<span>
