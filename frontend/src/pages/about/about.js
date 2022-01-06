@@ -15,8 +15,7 @@ var About = () => {
 			<div className="App-centered">
 				<img src={timeline} className="App-timeline" alt="Línea de tiempo" />
 			</div>
-			<div className="back-button">
-				<LinkButton to='/'>Volver</LinkButton>
+			<div className="back-button"><LinkButton to='/'>Volver</LinkButton>
 			</div>
 		</div>
 	</React.Fragment>

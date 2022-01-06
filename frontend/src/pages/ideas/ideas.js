@@ -2,28 +2,26 @@ import React, {useEffect, useState} from 'react';
 import ReactMarkdown from 'react-markdown'
 import LinkButton from '../../components/LinkButton';
 import { useParams } from 'react-router-dom';
+import Comments from './comments';
 
 function Ideas() {
 
 	const [apiResponse, setapiResponse] = useState(''); //initialize useState to ""
-	const [apiComment, setapiComment] = useState([]);
 
 	const {id} = useParams();
 
+	const api_server =
+		process.env.NODE_ENV === "development"
+			? "" //express server in development, localhost
+			: "http://juanchi.pro:9000"; //express server in production
+	const api_path = api_server + "/api/" + id
+	const comments_path = api_server + "/comments/" + id
+
 	useEffect(() => {
 
-		const api_server =
-			process.env.NODE_ENV === "development"
-				? "" //express server in development, localhost
-				: "http://juanchi.pro:9000"; //express server in production
-
-		fetch(api_server + "/api/" + id)
+		fetch(api_path)
 			.then(res => res.text())
 			.then(res => setapiResponse(res));
-
-		//fetch(api_server + "/comments/" + id)
-			//.then(res => res.json())
-			//.then(data => setapiComment(data));
 
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
@@ -42,9 +40,11 @@ function Ideas() {
 				<div className="h-entry App-text">
 					{/* linkTarget sets the target for links */}
 					<ReactMarkdown children = {apiResponse} />
-					{/*apiComment.map((user) => (
-						<div className="user">{user.Text}</div>
-					))*/}
+					<div id = "comments">
+						{!main &&
+							<Comments path = {comments_path} main = {main}/>
+						}
+					</div>
 				</div>
 			</div>
 			<div className="back-button">

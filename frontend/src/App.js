@@ -36,7 +36,7 @@ class ErrorBoundary extends React.Component {
 
 	render() {
 		if (this.state.hasError) {
-				return <p>¡Carga de página fallida! Por favor, recárgala.</p>;
+			return <p>¡Carga de página fallida! Por favor, recárgala.</p>;
 		}
 
 		return this.props.children;

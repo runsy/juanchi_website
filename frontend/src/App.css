@@ -56,11 +56,6 @@ blockquote {
   padding-left: 15px;
   border-left: 3px solid #ccc;
 }
-
-pre, code {
-  font-family: monospace;
-}
-
 .button {
 	font-family: BadComic, sans;
 	font-size: calc(14px + 2vmin);
@@ -74,6 +69,12 @@ pre, code {
 	box-shadow: none;
 	cursor:pointer;
 	margin-bottom: 1em;
+}
+
+
+pre, code {
+  font-family: monospace;
+  font-size: calc(14px + 1.25vmin);
 }
 
 pre {
@@ -217,4 +218,29 @@ pre > code {
 /* markdown */
 .markdown {
 	text-align: left;
+}
+
+/* Comments */
+
+hr {
+  border: 2px dashed;
+}
+
+#comment-new-input {
+	font-family: SageSans, serif;
+	font-size: calc(15px + 1.75vmin);
+	margin: 0.35em;
+}
+
+.comment-text {
+	font-family: SageSans, serif;
+	font-size: calc(14px + 2vmin);
+	margin: 0.35em;
+}
+
+.comment-date {
+	font-family: SageSans, serif;
+	font-size: calc(11px + 2vmin);
+	color: gray;
+	margin: 0.35em;
 }

@@ -13,8 +13,8 @@ var db = new sqlite3.Database(db_name, err => {
 var sql_create = `CREATE TABLE IF NOT EXISTS Comments (
   Comment_ID INTEGER PRIMARY KEY AUTOINCREMENT,
   Idea_ID VARCHAR(256),
-  Author VARCHAR(100) NOT NULL,
-  Text TEXT
+  Text TEXT,
+  Creation_Date INTEGER
 );`;
 
 db.run(sql_create, err => {
