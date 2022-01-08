@@ -13,7 +13,6 @@ h1 {
 	font-family: BadComic, sans;
 	font-size: calc(15px + 4vmin);
 	margin-bottom: 0.5em;
-	border-bottom: 1px dashed #999;
 	display: inline;
 }
 
@@ -21,7 +20,6 @@ h2 {
 	font-family: BadComic, sans;
 	font-size: calc(14px + 3vmin);
 	margin-bottom: 0.5em;
-	border-bottom: 1px dashed #999;
 	display: inline;
 }
 
@@ -29,7 +27,6 @@ h3 {
 	font-family: BadComic, sans;
 	font-size: calc(13px + 3vmin);
 	margin-bottom: 0.5em;
-	border-bottom: 1px dashed #999;
 	display: inline;
 }
 

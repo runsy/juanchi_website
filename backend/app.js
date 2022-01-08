@@ -7,7 +7,12 @@ var logger = require('morgan');
 var cors = require("cors");
 var indexRouter = require('./routes/index');
 var apiRouter = require("./routes/api");
-var apiComments =  require("./routes/comments");
+
+var CONFIG = require('./config.json');
+var Comments = CONFIG.Comments;
+if (Comments) {
+	var apiComments =  require("./routes/comments");
+}
 
 var app = express();
 
@@ -23,7 +28,9 @@ app.use(cookieParser());
 
 app.use('/', indexRouter);
 app.use("/api", apiRouter);
-app.use("/comments", apiComments);
+if (Comments) {
+	app.use("/comments", apiComments);
+}
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

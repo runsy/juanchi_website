@@ -1,4 +1,4 @@
-import React, {useReducer, useState, useEffect, useCallback} from 'react'
+import React, {useReducer, useEffect, useCallback} from 'react'
 
 const commentReducer = (state, action) => {
     switch (action.type) {
@@ -69,7 +69,7 @@ const Comments = (props: CommentProps) => {
 			<div>
 				<h1>Comentarios</h1>
 				<div className="comment__new">
-					<input id="comment-new-input" type="text" placeholder="Tu comentario y ENTER" onKeyDown={handleKeyDown} />
+					<input id="comment-new-input" maxlength="50" type="text" placeholder="Tu comentario y ENTER" onKeyDown={handleKeyDown} />
 				</div>
                 {state.comments.map((commentItem) => (
                     <div class = "comment" key = {commentItem.Comment_ID}>

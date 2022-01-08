@@ -49,7 +49,7 @@ const NoMatchPage = () => {
 		<React.Fragment>
 			<div>
 				<img src={_404} className="_404" alt="404 Error" />
-				<h3>404 - Not found</h3>
+				<p>404 - Not found</p>
 			</div>
 			<div className="back-button">
 				<LinkButton to='/'>Volver</LinkButton>
