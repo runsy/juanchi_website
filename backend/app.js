@@ -8,11 +8,13 @@ var cors = require("cors");
 var indexRouter = require('./routes/index');
 var apiRouter = require("./routes/api");
 
+/*
 var CONFIG = require('./config.json');
 var Comments = CONFIG.Comments;
 if (Comments) {
-	var apiComments =  require("./routes/comments");
+	var apiComments =  require("./routes/comments_mongo");
 }
+*/
 
 var app = express();
 
@@ -28,19 +30,13 @@ app.use(cookieParser());
 
 app.use('/', indexRouter);
 app.use("/api", apiRouter);
-if (Comments) {
+/*if (Comments) {
 	app.use("/comments", apiComments);
-}
+}*/
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
-
-//app.use(express.static(path.join(__dirname, '../frontend/build'))); //  "public" off of current is root
-//console.log(path.join(__dirname, '../frontend/build'));
-//app.get("/api", function (req, res) {
-   //res.sendFile(path.resolve(__dirname, '../frontend/build', 'index.html'));
-//})
 
 // error handler
 app.use(function(err, req, res, next) {

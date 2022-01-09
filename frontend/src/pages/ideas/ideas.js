@@ -2,9 +2,9 @@ import React, {useEffect, useState} from 'react';
 import ReactMarkdown from 'react-markdown'
 import LinkButton from '../../components/LinkButton';
 import { useParams } from 'react-router-dom';
-import Comments from './comments';
-var CONFIG = require('../../config.json');
-var Load_Comments = CONFIG.Load_Comments;
+//import Comments from './comments';
+//var CONFIG = require('../../config.json');
+//var Load_Comments = CONFIG.Load_Comments;
 
 function Ideas() {
 
@@ -17,7 +17,7 @@ function Ideas() {
 			? "" //express server in development, localhost
 			: "http://juanchi.pro:9000"; //express server in production
 	const api_path = api_server + "/api/" + id
-	const comments_path = api_server + "/comments/" + id
+	//const comments_path = api_server + "/comments/" + id
 
 	useEffect(() => {
 
@@ -42,11 +42,11 @@ function Ideas() {
 				<div className="h-entry App-text">
 					{/* linkTarget sets the target for links */}
 					<ReactMarkdown children = {apiResponse} />
-						{!main && Load_Comments &&
+						{/*!main && Load_Comments &&
 							<div id = "comments">
 								<Comments path = {comments_path} main = {main}/>
 							</div>
-						}
+						*/}
 				</div>
 			</div>
 			<div className="back-button">

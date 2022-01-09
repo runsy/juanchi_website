@@ -78,7 +78,7 @@ const Comments = (props: CommentProps) => {
 							{commentItem.Text}
 						</div>
 						<div class = "comment-date">
-							{Date(commentItem.Creation_Date * 1000)}
+							{Date(commentItem.Creation_Date)}
 						</div>
                     </div>
                 ))}
