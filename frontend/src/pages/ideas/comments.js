@@ -1,31 +1,22 @@
-import React, {useReducer, useEffect, useCallback} from 'react'
+import React, {useReducer, useEffect, useCallback, useRef} from 'react'
 
 const commentReducer = (state, action) => {
     switch (action.type) {
         case 'FETCH_SUCCESS':
             // Update the comments with the new payload
-            return { "showComments": false, "path": state.path, "comments": action.payload }
+            return {...state, "showComments": false, "comments": action.payload }
         case 'COMMENTS_LOADED':
             // Update the comments with the new payload
-            return { "showComments": true, "path": state.path, "comments": state.comments}
+            return {...state, "showComments": true, "comments": state.comments}
 		case 'ADD_COMMENT':
-		    const requestOptions = {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({ Text: action.payload })
-			};
-			fetch(state.path, requestOptions)
-				.then(response => response.json())
-				.then(data => data.id);
-			state.comments.unshift({ Text: action.payload })
+			const new_comment = {_id : "", Idea_ID : "", Text: action.payload, Creation_Date: "now" };
+			return {...state, "showComments": true, "comments": [new_comment, ...state.comments]};
+			//return {...state, "showComments": true, "comments": newMessages};
             // Return the updated state
-            return { "showComments": true, "path": state.path, "comments": state.comments }
         default:
             throw new Error();
     }
 }
-
-//const initialComments = [{ Idea_ID: 1, Text: "This is the first comment" }, { Idea_ID: 2, Text: "This is the second comment" }]
 
 type CommentProps = {
 	path: string;
@@ -34,6 +25,10 @@ type CommentProps = {
 
 const Comments = (props: CommentProps) => {
 
+	const [state, dispatch] = useReducer(commentReducer, {
+		"showComments": false,
+		"comments": []
+	});
 
 	const FetchComments = useCallback(() => {
 		fetch(props.path)
@@ -41,22 +36,31 @@ const Comments = (props: CommentProps) => {
 			.then(data => dispatch({type: "FETCH_SUCCESS", payload:data}));
 	}, [props.path]);
 
-	useEffect(() => {
-		FetchComments()
-	}, [FetchComments])
+	const Update = useRef(true);
 
-	const [state, dispatch] = useReducer(commentReducer,{
-			"showComments": false,
-			"path": props.path,
-			"comments": []
-		});
+	useEffect(() => {
+		if (Update.current) {
+			console.log("Comments loaded.");
+			FetchComments();
+		}
+	}, [FetchComments])
 
     const handleKeyDown = (event) => {
         // Press enter key
         if (event.keyCode === 13) {
 			event.preventDefault();
-			dispatch({type: "ADD_COMMENT", payload:event.currentTarget.value});
+			Update.current = false;
+			const comment_text = event.currentTarget.value;
+			const requestOptions = {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ Text: comment_text })
+			};
+			fetch(props.path, requestOptions)
+				.then(response => response.json());
+			dispatch({type: "ADD_COMMENT", payload: comment_text});
 			event.currentTarget.value = "";
+			console.log("Comment added.");
         }
     };
 
@@ -71,17 +75,19 @@ const Comments = (props: CommentProps) => {
 				<div className="comment__new">
 					<input id="comment-new-input" maxlength="50" type="text" placeholder="Tu comentario y ENTER" onKeyDown={handleKeyDown} />
 				</div>
-                {state.comments.map((commentItem) => (
-                    <div class = "comment" key = {commentItem.Comment_ID}>
-						<hr/>
-                        <div class = "comment-text">
-							{commentItem.Text}
-						</div>
-						<div class = "comment-date">
-							{Date(commentItem.Creation_Date)}
-						</div>
-                    </div>
-                ))}
+				<ul class= "comment">
+					{state.comments.map((commentItem) => (
+						<li key = {commentItem._id}>
+							<hr/>
+							<div class = "comment-text">
+								{commentItem.Text}
+							</div>
+							<div class = "comment-date">
+								{commentItem.Creation_Date}
+							</div>
+						</li>
+					))}
+                </ul>
 			</div>
         )
     }

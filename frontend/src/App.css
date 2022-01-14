@@ -223,6 +223,12 @@ hr {
   border: 2px dashed;
 }
 
+ul.comment {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
 #comment-new-input {
 	font-family: SageSans, serif;
 	font-size: calc(15px + 1.75vmin);

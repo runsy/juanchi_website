@@ -5,7 +5,7 @@ const db = require('../data/mongo')
 router.get("/:id", async(req, res) => {
 	const collection = db.collection('Comments');
 	const id = req.params.id;
-	const comments = await collection.find({Comment_ID: id}).toArray();
+	const comments = await collection.find({Comment_ID: id}).sort({Creation_Date: -1}).toArray();
 	res.send(comments);
 });
 
